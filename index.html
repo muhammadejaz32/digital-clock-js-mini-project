@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        .container{
+            width: 100%;
+            height: 95vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(180deg, rgb(85, 85, 94), rgb(81, 110, 109),rgb(103, 133, 107));
+        }
+        .main{
+            padding: 10vh;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px;
+            font-size: 30px;
+            background: linear-gradient(180deg, rgb(79, 79, 107), rgb(162, 206, 162),rgb(143,200,190));
+
+        }
+        span{
+            background-color: lightcyan;
+            padding: 10px;
+            margin: -10px;
+            border-radius: 10px;
+
+
+
+        }
+        h1{
+            font-size: 25px;
+            text-align: center;
+            text-transform: capitalize;
+
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <h1>digital clock</h1>
+        <span id="hours">0</span>
+        <span id="minutes">0</span>
+        <span id="seconds">0</span>
+      </div>
+    </div>
+
+    <script>
+      function updateclock() {
+        let currenttime = new Date();
+        document.getElementById("minutes").innerHTML =
+          currenttime.getMinutes() + "M:";
+        document.getElementById("hours").innerHTML =
+          currenttime.getHours() + "H:";
+        document.getElementById("seconds").innerHTML =
+          currenttime.getSeconds() + "S";
+      }
+      setInterval(updateclock, 1000);
+      updateclock();
+    </script>
+  </body>
+</html>
